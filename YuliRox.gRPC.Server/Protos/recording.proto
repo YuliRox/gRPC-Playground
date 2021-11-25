@@ -3,7 +3,7 @@ import "google/protobuf/wrappers.proto";
 
 option csharp_namespace = "YuliRox.gRPC.Server";
 
-package greet;
+package yulirox;
 
 // The recording service definition.
 service RecordingService {
