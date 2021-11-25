@@ -13,21 +13,21 @@ public class RecordingService : Server.RecordingService.RecordingServiceBase
 
     public override Task<CurrentRecordingIdReply> GetCurrentRecordingId(CurrentRecordingIdRequest request, ServerCallContext context)
     {
-        return base.GetCurrentRecordingId(request, context);
+        return Task.FromResult(new CurrentRecordingIdReply() {Id = 2});
     }
 
     public override Task<StatusReply> GetRecordingStatus(StatusRequest request, ServerCallContext context)
     {
-        return base.GetRecordingStatus(request, context);
+        return Task.FromResult(new StatusReply(){ServerStatusCode = ServerStatusCode.Idle});
     }
 
     public override Task<StartReply> StartRecording(StartRequest request, ServerCallContext context)
     {
-        return base.StartRecording(request, context);
+        return Task.FromResult(new StartReply(){ Rc = true });
     }
 
     public override Task<StopReply> StopRecording(StopRequest request, ServerCallContext context)
     {
-        return base.StopRecording(request, context);
+        return Task.FromResult(new StopReply(){ Rc = true });
     }
 }
