@@ -1,9 +1,9 @@
 using Grpc.Core;
-using YuliRox.gRPC.Server;
+using YuliRox.gRPC;
 
-namespace YuliRox.gRPC.Server.Services;
+namespace YuliRox.gRPC.Services;
 
-public class RecordingService : Server.RecordingService.RecordingServiceBase
+public class RecordingService : gRPC.RecordingService.RecordingServiceBase
 {
     private readonly ILogger<RecordingService> _logger;
     public RecordingService(ILogger<RecordingService> logger)
